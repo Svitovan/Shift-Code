@@ -13,34 +13,30 @@ def get_data():
     return(data)
 
 def encrypt(word, num):
-    new_word = ""
     for x in word:
         y = alphabet.index(x)
-        y = y + num
+        y += num
         if y > 26:
-            y = y - 27
+            y -= 27
         new_char = alphabet[y]
-        new_word = new_word + new_char
-    print(new_word)
+    print(new_char)
     print("---")
 
 def decrypt(word, num):
-    new_word = ""
     for x in word:
         y = alphabet.index(x)
-        y = y - num
+        y -= num
         if y < 0:
-            y = y + 27
+            y += 27
         new_char = alphabet[y]
-        new_word = new_word + new_char
-    print(new_word)
+    print(new_char)
     print("---")
 
 def main():
     again = True
     while again == True:
-        print("1. - Encrypt")
-        print("2. - Decrypt")
+        print("1. - Encrypting")
+        print("2. - Decrypting")
         print("3. - Quit")
         selection = int(input("Enter your selection: "))
         if selection == 1:
