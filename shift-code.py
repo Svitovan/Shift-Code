@@ -13,22 +13,24 @@ def get_data():
     return(data)
 
 def encrypt(word, num):
+    new_char = ""
     for x in word:
         y = alphabet.index(x)
         y += num
         if y > 26:
             y -= 27
-        new_char = alphabet[y]
+        new_char += alphabet[y]
     print(new_char)
     print("---")
 
 def decrypt(word, num):
+    new_char = ""
     for x in word:
         y = alphabet.index(x)
         y -= num
         if y < 0:
             y += 27
-        new_char = alphabet[y]
+        new_char += alphabet[y]
     print(new_char)
     print("---")
 
