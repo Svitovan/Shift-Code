@@ -9,8 +9,7 @@ def get_data():
     if num > 26 or num == 0:
     # while num > 26 or num == 0:
         num = int(input("Enter CORRECT number between 1 - 26: "))
-    data = (word, num)
-    return(data)
+    return word, num
 
 def encrypt(word, num):
     new_char = ""
@@ -29,7 +28,7 @@ def decrypt(word, num):
         y = alphabet.index(x)
         y -= num
         if y < 0:
-            y += 27
+            y += 26
         new_char += alphabet[y]
     print(new_char)
     print("---")
